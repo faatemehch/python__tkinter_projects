@@ -1,6 +1,6 @@
 # python__tkinter_projects
 <table>
-<tr>
+<tr style="color:red">
 <th>
  projetc
  </th>
