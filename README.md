@@ -1,7 +1,7 @@
 # python__tkinter_projects
 <table>
-<tr style="text-color:red;">
-<th>
+<tr
+<th style="color:red;">>
  projetc
  </th>
  <th>
