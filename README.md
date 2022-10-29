@@ -34,4 +34,14 @@
    using OpenWeatherMap API 
  </td>
  </tr>
+ 
+ 
+ <tr>
+ <td>
+    Flag Recognition
+ </td>
+ <td>
+   Show Flag of contries  to guess it (Work eith file)
+ </td>
+ </tr>
 </table>
