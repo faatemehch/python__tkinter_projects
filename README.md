@@ -8,4 +8,12 @@
  Content
  </td>
 </th>
+<tr>
+ <td>
+ contactList
+ </td>
+ <td>
+ CRUD OPERATIONS
+ </td>
+</tr>
 </table>
