@@ -41,7 +41,7 @@
     Flag Recognition
  </td>
  <td>
-   Show Flag of contries  to guess it (Work eith file)
+   Show Flag of contries  to guess it (Work with file)
  </td>
  </tr>
 </table>
