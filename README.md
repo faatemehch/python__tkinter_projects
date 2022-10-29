@@ -1,19 +1,19 @@
 # python__tkinter_projects
 <table>
+<tr>
 <th>
-<td>
  projetc
- </td>
- <td>
+ </th>
+ <th>
  Content
- </td>
-</th>
+ </th>
+</tr>
 <tr>
  <td>
- contactList
+    contactList
  </td>
  <td>
- CRUD OPERATIONS
+    CRUD OPERATIONS
  </td>
 </tr>
 </table>
