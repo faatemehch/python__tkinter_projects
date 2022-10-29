@@ -1,9 +1,4 @@
 # python__tkinter_projects
-<style>
-th{
- color:red;
-}
-</style>
 <table>
 <tr>
 <th>
