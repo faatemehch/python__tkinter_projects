@@ -31,7 +31,7 @@
     weather app
  </td>
  <td>
-   using API 
+   using OpenWeatherMap API 
  </td>
  </tr>
 </table>
