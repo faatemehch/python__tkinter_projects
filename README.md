@@ -25,4 +25,13 @@
     simple calculator
  </td>
 </tr>
+
+ <tr>
+ <td>
+    weather app
+ </td>
+ <td>
+   using API 
+ </td>
+ </tr>
 </table>
