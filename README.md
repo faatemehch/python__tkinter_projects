@@ -13,7 +13,16 @@
     contactList
  </td>
  <td>
-    CRUD OPERATIONS
+    CRUD operations
+ </td>
+</tr>
+ 
+ <tr>
+ <td>
+    calculator
+ </td>
+ <td>
+    simple calculator
  </td>
 </tr>
 </table>
