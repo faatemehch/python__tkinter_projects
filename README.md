@@ -22,7 +22,7 @@
     calculator
  </td>
  <td>
-    simple calculator
+    simple calculator (+, -, *, /) depending upon the input from the user
  </td>
 </tr>
 
