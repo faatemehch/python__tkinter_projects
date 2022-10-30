@@ -4,7 +4,7 @@ from io import BytesIO
 from PIL import ImageTk, Image
 
 root = Tk()  
-root.title("Learn to Code.")
+root.title("Weather App.")
 root.geometry("350x250")
 root.resizable(False, False)
 
