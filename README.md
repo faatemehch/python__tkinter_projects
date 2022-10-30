@@ -10,10 +10,10 @@
 </tr>
 <tr>
  <td>
-    contactList
+    <a href"https://github.com/faatemehch/python__tkinter_projects/tree/master/ContactListTkinter"> Contact List</a>
  </td>
  <td>
-    CRUD operations
+    CRUD operations(With python and SQLite)
  </td>
 </tr>
  <tr>
