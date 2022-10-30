@@ -6,7 +6,9 @@ from PIL import Image, ImageTk
 
 root = Tk()
 root.title("Album")
-root.iconbitmap("ImageSliderAppTkinter/img/photo.ico")
+root.geometry("250x210")
+root.resizable(False, False)
+root.grid_columnconfigure(1, weight=1)
 
 image_list = []
 # load images from img directory
@@ -17,7 +19,7 @@ for image in os.listdir("ImageSliderAppTkinter/img"):
         image_list.append(img)
 
 img_lbl = Label(root, image=image_list[0])
-img_lbl.grid(row=0, column=0, columnspan=3)
+img_lbl.grid(row=0, column=0, columnspan=3, pady=10)
 
 global img_number
 img_number = 0
@@ -54,17 +56,15 @@ def upload():
 
 
 status_label = Label(root, text=f"image {img_number+1} of {len(image_list)}")
-backButton = Button(root, text=u"\u00AB", command=backward)
+backButton = Button(root, text=u"\u00AB", command=backward,width=5)
 exitButton = Button(root, text="Exit", command=root.destroy)
-forwardButton = Button(root, text=u"\u00BB", command=lambda: forward())
+forwardButton = Button(root, text=u"\u00BB", command=lambda: forward(),width=5)
 uploadBtn = Button(root, text="upload new image".title(), command=upload)
 
-status_label.grid(row=1, column=1,sticky="e")
+status_label.grid(row=1, column=1)
 backButton.grid(row=2, column=0)
 exitButton.grid(row=2, column=1)
 forwardButton.grid(row=2, column=2)
 uploadBtn.grid(row=3, column=0,columnspan=3)
 
-root.geometry("201x201")
-root.resizable(False, False)
 root.mainloop()
