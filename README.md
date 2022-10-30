@@ -16,7 +16,6 @@
     CRUD operations
  </td>
 </tr>
- 
  <tr>
  <td>
     calculator
@@ -25,7 +24,6 @@
     simple calculator (+, -, *, /) depending upon the input from the user
  </td>
 </tr>
-
  <tr>
  <td>
     weather app
@@ -34,14 +32,20 @@
    using OpenWeatherMap API 
  </td>
  </tr>
- 
- 
  <tr>
  <td>
     Flag Recognition
  </td>
  <td>
    Show Flag of contries  to guess it (Work with file)
+ </td>
+ </tr>
+  <tr>
+ <td>
+    Image Slider
+ </td>
+ <td>
+   slide images and store new image in a directory (Tkinter & PIL)
  </td>
  </tr>
 </table>
