@@ -26,7 +26,7 @@ Contact List
 </tr>
  <tr>
  <td>
-    weather app
+    Weather App
  </td>
  <td>
    using OpenWeatherMap API 
@@ -51,6 +51,10 @@ Contact List
 </table>
 <h1>Demo</h1>
 <ul>
+<li><h4>Calculatore</h4>
+<p><img src="https://user-images.githubusercontent.com/64579048/198893978-99858f7a-a03c-4e50-ba12-6aadb3d190e3.gif"></p>
+</li>
+
 <li><h4>Image Slider App</h4>
 <p><img src="https://user-images.githubusercontent.com/64579048/198891494-388a3e42-2f99-46b7-8616-091637d80b38.gif"></p>
 </li>
