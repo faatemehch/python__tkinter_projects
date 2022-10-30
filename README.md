@@ -1,4 +1,4 @@
-# python__tkinter_projects
+# Python Tkinter Projects
 <table>
 <tr>
 <th>
