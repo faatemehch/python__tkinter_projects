@@ -49,8 +49,8 @@ Contact List
  </td>
  </tr>
 </table>
-> Demo
-- Weather app
+<h1>Demo</h1>
+<h3>Weather app</h3>
 
 
 https://user-images.githubusercontent.com/64579048/198863843-c7a70907-81a8-4188-b0f6-292bf84aa091.mov
