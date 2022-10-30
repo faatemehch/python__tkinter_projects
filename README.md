@@ -10,7 +10,7 @@
 </tr>
 <tr>
  <td>
-    <a href"https://github.com/faatemehch/python__tkinter_projects/tree/master/ContactListTkinter"> Contact List</a>
+Contact List
  </td>
  <td>
     CRUD operations(With python and SQLite)
@@ -18,7 +18,7 @@
 </tr>
  <tr>
  <td>
-    calculator
+    Calculator
  </td>
  <td>
     simple calculator (+, -, *, /) depending upon the input from the user
