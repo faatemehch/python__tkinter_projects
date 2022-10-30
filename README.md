@@ -50,9 +50,9 @@ Contact List
  </tr>
 </table>
 <h1>Demo</h1>
-<h3>Weather app</h3>
+<h4>Weather app</h4>
 
+![weatherApp](https://user-images.githubusercontent.com/64579048/198864040-6ec6f375-8c34-4f89-aa79-680ebebbd672.gif)
 
-https://user-images.githubusercontent.com/64579048/198863843-c7a70907-81a8-4188-b0f6-292bf84aa091.mov
 
 
