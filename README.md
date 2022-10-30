@@ -50,8 +50,13 @@ Contact List
  </tr>
 </table>
 <h1>Demo</h1>
-<h4>Weather app</h4>
+<ul>
+<li><h4>Image Slider App</h4>
+<p><img src="https://user-images.githubusercontent.com/64579048/198891494-388a3e42-2f99-46b7-8616-091637d80b38.gif"></p>
+</li>
+
+<li><h4>Weather App</h4>
 <p><img src="https://user-images.githubusercontent.com/64579048/198872574-3704bf22-6cc5-4b30-a087-3bb1cc5f1ed4.GIF"></p>
-
-
+</li>
+</ul>
 
