@@ -51,8 +51,6 @@ Contact List
 </table>
 <h1>Demo</h1>
 <h4>Weather app</h4>
-
-![weatherApp](https://user-images.githubusercontent.com/64579048/198864040-6ec6f375-8c34-4f89-aa79-680ebebbd672.gif)
-
+![GIF image-4AAE5F66EB57-1](https://user-images.githubusercontent.com/64579048/198864204-b510956a-0819-4a21-ba47-d655babcdd29.gif)
 
 
