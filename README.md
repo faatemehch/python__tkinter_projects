@@ -24,6 +24,15 @@ Contact List
     simple calculator (+, -, *, /) depending upon the input from the user
  </td>
 </tr>
+
+ <tr>
+ <td>
+    Paint
+ </td>
+ <td>
+    simple Paint Using Tkinter and Save it using Pillow
+ </td>
+</tr>
  <tr>
  <td>
     Weather App
