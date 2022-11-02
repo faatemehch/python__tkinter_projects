@@ -53,7 +53,7 @@ Contact List
     Paint
  </td>
  <td>
-    simple Paint Using Tkinter and Save it using Pillow
+    simple Paint Using Tkinter and Save it using Pillow package
  </td>
 </tr>
 </table>
