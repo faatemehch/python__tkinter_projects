@@ -1,5 +1,6 @@
 from tkinter import *
 import requests
+from tkinter import messagebox
 from io import BytesIO
 from PIL import ImageTk, Image
 
@@ -26,9 +27,7 @@ def show_weather():
             }
         print(context)
     except Exception as e:
-        response = "Error..."
-        myLabel = Label(root, text=response)
-        myLabel.pack()
+        messagebox.showerror("error", "Something went wrong!")
     else:
         if context["main"] == "Rain":
             root.configure(bg="skyblue")
@@ -50,6 +49,8 @@ def show_weather():
         iconLabel["image"] = img
         tempratureLabel["text"] = "Temprature:"
         tempartur["text"] = str(context["temperature"]) + u"\u00b0"+ "F"
+    finally:
+        city.delete(0, END)
 
 
 city = Entry(root)
