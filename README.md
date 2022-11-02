@@ -24,15 +24,6 @@ Contact List
     simple calculator (+, -, *, /) depending upon the input from the user
  </td>
 </tr>
-
- <tr>
- <td>
-    Paint
- </td>
- <td>
-    simple Paint Using Tkinter and Save it using Pillow
- </td>
-</tr>
  <tr>
  <td>
     Weather App
@@ -57,6 +48,14 @@ Contact List
    slide images and store new image in a directory (Tkinter & PIL)
  </td>
  </tr>
+ <tr>
+ <td>
+    Paint
+ </td>
+ <td>
+    simple Paint Using Tkinter and Save it using Pillow
+ </td>
+</tr>
 </table>
 <h1>Demo</h1>
 <ul>
