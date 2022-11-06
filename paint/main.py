@@ -1,85 +1,106 @@
 from tkinter import *
-from tkinter.colorchooser import askcolor
-import time
-from PIL import Image, ImageDraw
+from tkinter import filedialog
+from PIL import ImageTk, Image
+import pygame
+import os
 
 root = Tk()
-root.geometry("526x650")
-root.title("Paint")
-root.resizable(False, False)
+root.geometry("550x300")
+root.title("MUSIC PLAYER")
+# root.config(bg="tomato")
 
-# default values
-color = "black"
-backgroundColor = "white"
-pensize = 5
-# create new image
-image = Image.new('RGB', (526,650), backgroundColor)
-draw = ImageDraw.Draw(image)
-# -------------------------------------
-# ------------- functions -------------
-# -------------------------------------
-def change_color():
-    global color
-    color = askcolor()[1]
-    print(color)
+pygame.mixer.init()  # initialize pygame mixer
+# global paused
+paused = False
+songs_path = {}  # make a dictionary to store songs path
+isPlaying = False
 
-def paint(event):
-    oldx, oldy = event.x, event.y
-    newx, newy = oldx+1, oldy+1
-    canvas.create_line((oldx, oldy, newx, newy), fill=f"{color}", width=pensize)
-    wh_label.config(text=f"({event.x}, {event.y})")
-    draw.line((oldx, oldy, newx, newy), fill=f"{color}", width=int(pensize))
 
-def motion(event):
-    wh_label.config(text=f"({event.x}, {event.y})")
+# ------------------ Functions -----------------
+def add_song():
+    # just mp3 files
+    songs = filedialog.askopenfilenames(initialdir="music/", title="choose a song", filetypes=(("mp3 Files", "*.mp3"),))
 
-def change_background_color():
-    global backgroundColor
-    bgcolor = askcolor()[1]
-    canvas.config(bg=bgcolor)
+    for song in songs:
+        basename = os.path.basename(song)  # extract basename of file from whole path
+        songs_path[f"{basename}"] = song
+        song_box.insert(END, basename)
 
-def change_pensize(value):
-    global pensize
-    pensize = clicked.get()
 
-def clear():
-    canvas.delete('all')
+def play_song():
+    song_name = song_box.get(ACTIVE)
+    pygame.mixer.music.load(songs_path[song_name])
+    pygame.mixer.music.play(loops=0)
 
-def save():
-    global image_number
-    filename = f'image_{time.time()}.png' 
-    image.save(f"paint/{filename}")
-# -------------------------------------
-# ------------- widgets ---------------
-# -------------------------------------
-canvas = Canvas(root, bg="white", width=500, height=500)
-canvas.grid(row=1, column=0, pady=10, padx=10, columnspan=12)
-# -------------------------------------
-change_color_btn = Button(root, text="change color", command=change_color)
-change_color_btn.grid(row=2, column=2, pady=15)
-# -------------------------------------
-pensize_label = Label(root, text="pensize:", fg="white")
-pensize_label.grid(row=2, column=0, pady=15, padx=10)
-# -------------------------------------
-options = range(1, 50)
-clicked = StringVar()
-clicked.set(pensize)
-change_pensize_options = OptionMenu(root,  clicked, *options, command=change_pensize)
-change_pensize_options.grid(row=2, column=1, pady=15)
-# -------------------------------------
-clear_button = Button(root, text="🗑", command=clear)
-clear_button.grid(row=2, column=3, ipadx=25)
-# -------------------------------------
-change_background_color = Button(root, text="Background color", command=change_background_color)
-change_background_color.grid(row=2, column=4)
-# -------------------------------------
-wh_label = Label(root, text="")
-wh_label.grid(row=0, column=0,padx=15, columnspan=12)
-# -------------------------------------
-save_button = Button(root, text="save", command=save)
-save_button.grid(row=3, column=0,ipadx=220, columnspan=12)
-# -------------------------------------
-canvas.bind("<B1-Motion>", paint)
-canvas.bind("<Motion>", motion)
-# -------------------------------------
+
+def stop_song():
+    pygame.mixer.music.stop()
+    song_box.selection_clear(ACTIVE)
+
+
+def pause_song():
+    global paused
+    if paused:
+        pygame.mixer.music.unpause()
+        paused = False
+    else:
+        pygame.mixer.music.pause()
+        paused = True
+
+
+def previous_song():
+    current_song = song_box.curselection()[0]  # the index of currently selected item
+    previous_song_name = song_box.get(current_song - 1)
+    next_song_path = songs_path[f"{previous_song_name}"]
+    song_box.selection_clear(current_song)
+    song_box.selection_set(current_song - 1)
+    play_song()
+    # pygame.mixer.music.load(next_song_path)
+    # pygame.mixer.music.play(loops=0)
+
+
+def next_song():
+    current_song = song_box.curselection()[0]  # the index of currently selected item
+    next_song_name = song_box.get(current_song + 1)
+    next_song_path = songs_path[f"{next_song_name}"]
+    song_box.selection_clear(current_song)
+    song_box.selection_set(current_song + 1)
+    play_song()
+    # pygame.mixer.music.load(next_song_path)
+    # pygame.mixer.music.play(loops=0)
+
+
+# ------------------- Widgets ------------------
+# song listbox
+song_box = Listbox(root, bg="black", fg="white", selectbackground="white", selectforeground="black", width=60,
+                   font=("arial", 15))
+song_box.pack(pady=20)
+# button images
+back_img = ImageTk.PhotoImage(Image.open("img/back.png").resize((64, 64)))
+forward_img = ImageTk.PhotoImage(Image.open("img/forward.png").resize((64, 64)))
+play_img = ImageTk.PhotoImage(Image.open("img/play.png").resize((64, 64)))
+stop_img = ImageTk.PhotoImage(Image.open("img/stop.png").resize((64, 64)))
+pause_img = ImageTk.PhotoImage(Image.open("img/pause.png").resize((64, 64)))
+# Player Frame
+player_frame = Frame(root)
+player_frame.pack()
+# add button
+back_btn = Button(player_frame, image=back_img, borderwidth=0, bd=0, command=previous_song)
+forward_btn = Button(player_frame, image=forward_img, borderwidth=0, bd=0, command=next_song)
+play_btn = Button(player_frame, image=play_img, borderwidth=0, bd=0, command=play_song)
+pause_btn = Button(player_frame, image=pause_img, borderwidth=0, bd=0, command=pause_song)
+stop_btn = Button(player_frame, image=stop_img, borderwidth=0, bd=0, command=stop_song)
+# grid btn
+back_btn.grid(row=0, column=0, padx=10)
+forward_btn.grid(row=0, column=4, padx=10)
+play_btn.grid(row=0, column=3, padx=10)
+pause_btn.grid(row=0, column=1, padx=10)
+stop_btn.grid(row=0, column=2, padx=10)
+#  Create Menu
+menu = Menu(root)
+root.config(menu=menu)
+add_song_menu = Menu(menu)
+menu.add_cascade(label="File", menu=add_song_menu)
+add_song_menu.add_command(label="Add New Song", command=add_song)
+# ----------------------------------------------
 root.mainloop()
