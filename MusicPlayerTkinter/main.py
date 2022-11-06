@@ -54,8 +54,9 @@ def previous_song():
     next_song_path = songs_path[f"{previous_song_name}"]
     song_box.selection_clear(current_song)
     song_box.selection_set(current_song - 1)
-    pygame.mixer.music.load(next_song_path)
-    pygame.mixer.music.play(loops=0)
+    play_song()
+    # pygame.mixer.music.load(next_song_path)
+    # pygame.mixer.music.play(loops=0)
 
 
 def next_song():
@@ -64,8 +65,9 @@ def next_song():
     next_song_path = songs_path[f"{next_song_name}"]
     song_box.selection_clear(current_song)
     song_box.selection_set(current_song + 1)
-    pygame.mixer.music.load(next_song_path)
-    pygame.mixer.music.play(loops=0)
+    play_song()
+    # pygame.mixer.music.load(next_song_path)
+    # pygame.mixer.music.play(loops=0)
 
 
 # ------------------- Widgets ------------------
@@ -74,11 +76,11 @@ song_box = Listbox(root, bg="black", fg="white", selectbackground="white", selec
                    font=("arial", 15))
 song_box.pack(pady=20)
 # button images
-back_img = ImageTk.PhotoImage(Image.open("MusicPlayerTkinter/img/back.png").resize((32, 32)))
-forward_img = ImageTk.PhotoImage(Image.open("MusicPlayerTkinter/img/forward.png").resize((32, 32)))
-play_img = ImageTk.PhotoImage(Image.open("MusicPlayerTkinter/img/play.png").resize((32, 32)))
-stop_img = ImageTk.PhotoImage(Image.open("MusicPlayerTkinter/img/stop.png").resize((32, 32)))
-pause_img = ImageTk.PhotoImage(Image.open("MusicPlayerTkinter/img/pause.png").resize((32, 32)))
+back_img = ImageTk.PhotoImage(Image.open("img/back.png").resize((64, 64)))
+forward_img = ImageTk.PhotoImage(Image.open("img/forward.png").resize((64, 64)))
+play_img = ImageTk.PhotoImage(Image.open("img/play.png").resize((64, 64)))
+stop_img = ImageTk.PhotoImage(Image.open("img/stop.png").resize((64, 64)))
+pause_img = ImageTk.PhotoImage(Image.open("img/pause.png").resize((64, 64)))
 # Player Frame
 player_frame = Frame(root)
 player_frame.pack()
@@ -100,6 +102,5 @@ root.config(menu=menu)
 add_song_menu = Menu(menu)
 menu.add_cascade(label="File", menu=add_song_menu)
 add_song_menu.add_command(label="Add New Song", command=add_song)
-
 # ----------------------------------------------
 root.mainloop()
