@@ -24,6 +24,15 @@ Contact List
     simple calculator (+, -, *, /) depending upon the input from the user
  </td>
 </tr>
+
+<tr>
+ <td>
+    Music Player
+ </td>
+ <td>
+    Music Player using Tkinter and pygame
+ </td>
+</tr>
  <tr>
  <td>
     Weather App
