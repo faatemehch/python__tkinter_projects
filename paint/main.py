@@ -43,7 +43,9 @@ def change_pensize(value):
     pensize = clicked.get()
 
 def clear():
+    global img, draw
     canvas.delete('all')
+    draw.rectangle((10,100,10+ canvas.winfo_width(),10+canvas.winfo_height()), fill=backgroundColor)
 
 def save():
     global image_number
