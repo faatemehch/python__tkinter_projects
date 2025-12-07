@@ -27,6 +27,15 @@ Contact List
 
 <tr>
  <td>
+    Pong Game
+ </td>
+ <td>
+     A retro-style arcade implementation with smooth paddle physics, score tracking, and competitive gameplay mechanics.
+ </td>
+</tr>
+
+<tr>
+ <td>
     Music Player
  </td>
  <td>
