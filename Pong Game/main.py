@@ -12,7 +12,7 @@ class Game:
         self.root = root
         self.root.geometry("800x850")
         self.left_score = 0
-        img = Image('photo', file='/Users/fch/Desktop/python__tkinter_projects/Pong Game/pong.png')
+        img = Image('photo', file='/Pong Game/pong.png')
         self.root.call('wm', 'iconphoto', root._w, img)
         self.right_score = 0
         self.game_time = 30  # زمان بازی به ثانیه
